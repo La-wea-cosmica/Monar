@@ -79,6 +79,7 @@ echo			      4) 1.16
 echo			      5) 1.17
 echo			      6) 1.18
 echo                       7) 1.19
+echo			      0) Back
 echo. 
 set /p verop=Version:
 if "%verop%"=="1" goto 1.7
@@ -87,6 +88,8 @@ if "%verop%"=="3" goto 1.12
 if "%verop%"=="4" goto 1.16
 if "%verop%"=="5" goto 1.17
 if "%verop%"=="6" goto 1.18
+if "%verop%"=="7" goto 1.19
+if "%verop%"=="0" goto gui 
 
 echo Please enter a valid option & timeout /t 1 >nul & goto launcher
 goto installcp
