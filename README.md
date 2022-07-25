@@ -9,7 +9,7 @@ lets be quick on this
 frist open "files" folder
 ![image](https://i.imgur.com/yCCFi9a.png)
 then we are goin to copy the location of the folder
-![image](https://i.imgur.com/iixsYO2.png)
+![image](https://i.imgur.com)
 and now we are going to open "path.txt" and put the location folder and save it
 ![image](https://i.imgur.com/h4ELS5F.png)
 result its gonna to be like:
