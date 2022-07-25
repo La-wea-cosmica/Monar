@@ -18,12 +18,19 @@ there you can say some suggestions or make friends in the community, also you ca
 # **How to Install it?**
 lets be quick on this
 frist open "files" folder
+
 ![image](https://i.imgur.com/yCCFi9a.png)
+
 then we are goin to copy the location of the folder
+
 ![image](https://i.imgur.com/L0DhhUF.png)
+
 and now we are going to open "path.txt" and put the location folder and save it
+
 ![image](https://i.imgur.com/xvvMhbI.png)
+
 result its gonna to be like:
+
 ![image](https://i.imgur.com/tW9EkVf.png)
 
 
