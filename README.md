@@ -18,7 +18,9 @@ result its gonna to be like:
 now the important part, you are gonna to open "files" then open jre" and join to "1.8-1.12" now enter to "zulu16.30.15-ca-fx-jre16.0.1-win_x64" and Finally we are gonna to open "lib"
 
 you are gonna to have something like this:
+
 ![image](https://i.imgur.com/W77VbeQ.png)
+
 you need to extract the "modules.rar" file, and thats all the setup!
 
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
