@@ -10,7 +10,7 @@ there you can say some suggestions or make friends in the community, also you ca
 # Preview
 
 ![image](https://i.imgur.com/zwC4amk.png)
-![image](https://i.imgur.com/RSn0zdn.png)
+![image](https://i.imgur.com/VrQui4N.png)
 
 (if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
 
