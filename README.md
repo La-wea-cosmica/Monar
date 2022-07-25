@@ -1,3 +1,5 @@
+# Monar 🎃
+
 Let me Introduce you Monar Launcher!
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
@@ -11,7 +13,7 @@ there you can say some suggestions or make friends in the community, also you ca
 (if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
 
 
-How to Install it?
+# How to Install it?
 lets be quick on this
 frist open "files" folder
 ![image](https://i.imgur.com/yCCFi9a.png)
@@ -23,7 +25,9 @@ result its gonna to be like:
 ![image](https://i.imgur.com/tW9EkVf.png)
 
 
-now the most important thing, open "files"
+# Now the Most important Thing
+
+open "files"
 ![image](https://i.imgur.com/yCCFi9a.png)
 
 then open "jre" and join to "1.8-1.12"
@@ -44,7 +48,7 @@ you need to extract the "modules.rar" file, and thats all the setup! (if you que
 
 
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
-!!!!!!!!!! WARNING !!!!!!!!!!
+# !!!!!!!!!! WARNING !!!!!!!!!!
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
 
 Also if you have installed LCProxy (one of our addonds) please uninstall it if you are going to use the normal lunar client or just update the client.
