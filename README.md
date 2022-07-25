@@ -28,13 +28,19 @@ result its gonna to be like:
 # Now the Most important Thing
 
 open "files"
+
 ![image](https://i.imgur.com/yCCFi9a.png)
 
 then open "jre" and join to "1.8-1.12"
+
 ![image](https://i.imgur.com/u1Zw0dO.png)
+
 ![image](https://i.imgur.com/TJ8rLu6.png)
+
 now enter to "zulu16.30.15-ca-fx-jre16.0.1-win_x64"
+
 ![image](https://i.imgur.com/CkpOmMW.png)
+
 and Finally we are gonna to open "lib"
 
 ![image](https://i.imgur.com/oJZIt3T.png)
@@ -44,6 +50,7 @@ you are gonna to have something like this:
 ![image](https://i.imgur.com/W77VbeQ.png)
 
 you need to extract the "modules.rar" file, and thats all the setup! (if you question "why you put a rar file?" since github dosent letme upload files up to 100mb and that file are a 105mb so)
+
 ![image](https://i.imgur.com/8MoyIEK.png)
 
 
