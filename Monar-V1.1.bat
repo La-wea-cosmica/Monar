@@ -2,7 +2,7 @@ echo off
 :gui
 chcp 65001
 cls
-title Monar Launcher V1.0 / GUI
+title Monar Launcher V1.1 / GUI
 echo off
 cls
 echo.
@@ -14,20 +14,55 @@ echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚█�
 echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
 echo.
 echo				1) Launcher
-echo				2) Install LCProxy
-echo                         3) Uninstall LCProxy
+echo				2) Addons
 echo.
 set /p op=Option:
 if "%op%"=="1" goto launcher
-if "%op%"=="2" goto basic
-if "%op%"=="3" goto uninstall
+if "%op%"=="2" goto addonz
 
 echo Please enter a valid option & timeout /t 1 >nul & goto gui
 goto gui
 
+:addonz
+title Monar Launcher V1.1 / Addons
+cls
+echo.
+echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
+echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
+echo		    ██╔████╔██║██║  ██║██╔██╗██║███████║██████╔╝
+echo		    ██║╚██╔╝██║██║  ██║██║╚████║██╔══██║██╔══██╗
+echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
+echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
+echo.
+echo				0) Back
+echo				1) LCProxy
+set /p opititi=Option:
+if "%opititi%"=="0" goto gui
+if "%opititi%"=="1" goto lcproxy
+
+:lcproxy
+title Monar Launcher V1.1 / Addons / LCProxy
+cls
+echo.
+echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
+echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
+echo		    ██╔████╔██║██║  ██║██╔██╗██║███████║██████╔╝
+echo		    ██║╚██╔╝██║██║  ██║██║╚████║██╔══██║██╔══██╗
+echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
+echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
+echo.
+echo				1) Install
+echo				2) Uninstall
+set /p opitk=Option:
+if "%opitk%"=="1" goto basic
+if "%opitk%"=="2" goto uninstall
+
+
+
+
 :launcher
 cls
-title Monar Launcher V1.0 / Version Selection
+title Monar Launcher V1.1 / Launcher Menu
 echo.
 echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
 echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
@@ -59,7 +94,7 @@ goto installcp
 
 :1.7
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -68,15 +103,41 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.7\zulu*") do start "Monar Debug" %%~I\bin\javaw.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.7.10 --accessToken 0 --assetIndex 1.7 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_7.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.8
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -85,15 +146,41 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.8-1.12\zulu*") do start "Monar Debug" %%~I\bin\javaw.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.8.9 --accessToken 0 --assetIndex 1.8 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_8.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.12
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -102,15 +189,41 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.8-1.12\zulu*") do start "Monar Debug" %%~I\bin\javaw.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.12.2 --accessToken 0 --assetIndex 1.12 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_12.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.16
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -119,15 +232,41 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.16-1.19\zulu*") do start "Monar Debug" %%~I\bin\javaw.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_16-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.16.5 --accessToken 0 --assetIndex 1.16 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_16-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_16.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.17
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -136,14 +275,40 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.16-1.19\zulu*") do start "Monar Debug" %%~I\bin\javaw.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_17-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.17.1 --accessToken 0 --assetIndex 1.17 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_17-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_17.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.18
-title Monar Launcher V1.0 / Version Selection
+title Monar Launcher V1.1 / Version Selection
 cls
 echo.
 echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
@@ -166,7 +331,7 @@ goto 1.18
 
 :1.18.1
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -175,15 +340,41 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.16-1.19\zulu*") do start "Monar Debug" %%~I\bin\java.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.1 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_18_1.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.18.2
 cls
-echo Launching...
+echo Creating Process...
 ping localhost -n 3.5 >nul
 set Args=-Xms3G -Xmx3G -Xmn1G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 for /f "delims=" %%x in (files\path.txt) do set pather=%%x
@@ -192,24 +383,42 @@ set scd=%userprofile%\.lunarclient\offline\multiver
 cd %scd%
 for /D %%I in ("%pather%\files\jre\1.16-1.19\zulu*") do start "Monar Debug" %%~I\bin\java.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.2 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %APPDATA%\.minecraft --texturesDir %USERPROFILE%\.lunarclient\textures --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_18.jar --workingDirectory . --classpathDir . --width 854 --height 480
 cls
-ping localhost -n 3.5 >nul
-echo Launched!
+ping localhost -n 4.5 >nul
+echo Process Created!
 ping localhost -n 5.5 >nul
+echo Checking Process...
+:dripcheck
+tasklist|find "javaw.exe" > NUL
+if %ERRORLEVEL% == 0 ( 
+    call :continuees
+) else ( 
+     call :noprocess
+)
+
+:noprocess
+echo Process Not Created!
+ping localhost -n 3.5 >nul
+echo Please Report The Error At the Discord
+eche Also Verify if you Have Installed That Version.
+ping localhost -n 6.7 >nul
+goto launcher
+
+:continuees
+ping localhost -n 5.5 >nul
+echo Process Checked!
+ping localhost -n 5.5 >nul
+echo Launching...
+ping localhost -n 5.5 >nul
+ping localhost -n 5.5 >nul
+echo Launched!
+ping localhost -n 1.0 >nul
 exit
 
 
 :1.19
-::cls
-::echo Launching...
-::ping localhost -n 3.5 >nul
 echo SOON
 ping localhost -n 3.5 >nul
 goto launcher
-::cls
-::ping localhost -n 3.5 >nul
-::echo Launched!
-::ping localhost -n 5.5 >nul
-::exit
 
 
 :basic
