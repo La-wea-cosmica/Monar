@@ -122,7 +122,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -165,7 +165,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -208,7 +208,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -251,7 +251,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -294,7 +294,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -359,7 +359,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
@@ -402,7 +402,7 @@ if %ERRORLEVEL% == 0 (
 echo Process Not Created!
 ping localhost -n 3.5 >nul
 echo Please Report The Error At the Discord
-eche Also Verify if you Have Installed That Version.
+echo Also Verify if you Have Installed That Version.
 ping localhost -n 6.7 >nul
 goto launcher
 
