@@ -21,7 +21,7 @@ you are gonna to have something like this:
 
 ![image](https://i.imgur.com/W77VbeQ.png)
 
-you need to extract the "modules.rar" file, and thats all the setup!
+you need to extract the "modules.rar" file, and thats all the setup! (if you question "why i need to due that?" since github dosent letme upload files up to 100mb and that file are a 105mb so)
 
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
 !!!!!!!!!! WARNING !!!!!!!!!!
