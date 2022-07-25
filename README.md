@@ -77,8 +77,7 @@ this is for skip any problem that lunar client can create with lcproxy files.
 
 
 Also, Monar stills needing the original lunar client launcher, so this isnt a replacement of the real launcher,
-its just a """optimized""" launcher, and it has a addon option in the future for now it only have 1 addon.
-
+its just a """optimized""" launcher, and it has some addon's
 
 
 
