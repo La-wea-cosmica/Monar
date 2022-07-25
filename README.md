@@ -1,10 +1,18 @@
 Let me Introduce you Monar Launcher!
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
-this project will be stay updating if you have problems i will announce it on https://dsc.gg/lunarcosmetics , We invite you to join on our server
+this project will be stay updating will announce it on https://dsc.gg/lunarcosmetics when it update, also We invite you to join on our server
 there you can say some suggestions or make friends in the community, also you can get raks for LCProxy (launcher addon) on our discord!
 
-How to use it?
+Preview:
+
+![image](https://i.imgur.com/zwC4amk.png)
+![image](https://i.imgur.com/RSn0zdn.png)
+
+(if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
+
+
+How to Install it?
 lets be quick on this
 frist open "files" folder
 ![image](https://i.imgur.com/yCCFi9a.png)
@@ -15,13 +23,26 @@ and now we are going to open "path.txt" and put the location folder and save it
 result its gonna to be like:
 ![image](https://i.imgur.com/tW9EkVf.png)
 
-now the important part, you are gonna to open "files" then open jre" and join to "1.8-1.12" now enter to "zulu16.30.15-ca-fx-jre16.0.1-win_x64" and Finally we are gonna to open "lib"
+
+now the most important thing, open "files"
+![image](https://i.imgur.com/yCCFi9a.png)
+
+then open "jre" and join to "1.8-1.12"
+![image](https://i.imgur.com/u1Zw0dO.png)
+![image](https://i.imgur.com/TJ8rLu6.png)
+now enter to "zulu16.30.15-ca-fx-jre16.0.1-win_x64"
+![image](https://i.imgur.com/CkpOmMW.png)
+and Finally we are gonna to open "lib"
+
+![image](https://i.imgur.com/oJZIt3T.png)
 
 you are gonna to have something like this:
 
 ![image](https://i.imgur.com/W77VbeQ.png)
 
-you need to extract the "modules.rar" file, and thats all the setup! (if you question "why i need to due that?" since github dosent letme upload files up to 100mb and that file are a 105mb so)
+you need to extract the "modules.rar" file, and thats all the setup! (if you question "why you put a rar file?" since github dosent letme upload files up to 100mb and that file are a 105mb so)
+![image](https://i.imgur.com/8MoyIEK.png)
+
 
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
 !!!!!!!!!! WARNING !!!!!!!!!!
