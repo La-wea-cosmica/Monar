@@ -6,6 +6,8 @@ Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It laun
 this project will be stay updating will announce it on https://dsc.gg/lunarcosmetics when it update, also We invite you to join on our server
 there you can say some suggestions or make friends in the community, also you can get raks for LCProxy (launcher addon) on our discord!
 
+# Download [GitHub releases page](https://github.com/La-wea-cosmica/Monar/releases)
+
 
 ![image](https://i.imgur.com/zwC4amk.png)
 ![image](https://i.imgur.com/RSn0zdn.png)
