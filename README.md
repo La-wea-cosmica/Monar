@@ -33,6 +33,7 @@ and now we are going to open "files" folder again
 ![image](https://i.imgur.com/yCCFi9a.png)
 
  and you are gonna to open "path.txt" and put the location folder and save it
+ 
 ![image](https://i.imgur.com/DgZVTNt.png)
 
 result its gonna to be like:
