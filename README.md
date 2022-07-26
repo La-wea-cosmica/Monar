@@ -30,7 +30,7 @@ then we are goin to copy the location of the folder
 
 and now we are going to open "path.txt" and put the location folder and save it
 
-![image](https://i.imgur.com/xvvMhbI.png)
+![image](https://i.imgur.com/DgZVTNt.png)
 
 result its gonna to be like:
 
