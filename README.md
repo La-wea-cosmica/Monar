@@ -10,7 +10,7 @@ this project will be stay updating will announce it on https://dsc.gg/lunarcosme
 there you can say some suggestions or make friends in the community, also you can get raks for LCProxy (launcher addon) on our discord!
 
 # Download: [GitHub releases page](https://github.com/La-wea-cosmica/Monar/releases)
-# Preview
+# Preview: 
 
 ![image](https://i.imgur.com/DEtD0xs.png)
 ![image](https://i.imgur.com/VrQui4N.png)
