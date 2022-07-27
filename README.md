@@ -1,8 +1,5 @@
 # Monar 🎃
 
-# WARNING! For now this Are totally PATCHED so if you have problems with launch its for the patch so.
-# for now i will fix it soon when my brain work again
-
 **Let me Introduce you Monar Launcher!**
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
