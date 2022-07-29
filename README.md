@@ -38,6 +38,22 @@ result its gonna to be like:
 ![image](https://i.imgur.com/xrZnSOZ.png)
 
 
+
+# Casual Errors
+
+frist open a cmd window and paste this:
+
+java -version
+
+if  you see version is 18 all its good you can skip this
+if you dont see the 18 is bad and you need to install it
+
+Join to https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
+and Download it, then install it and thats all.
+
+
+
+
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
 
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
