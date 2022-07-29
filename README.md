@@ -35,7 +35,7 @@ and now we are going to open "files" folder again
 
 result its gonna to be like:
 
-![image](https://i.imgur.com/tW9EkVf.png)
+![image](https://i.imgur.com/xrZnSOZ.png)
 
 
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
