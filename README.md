@@ -7,7 +7,7 @@ this project will be stay updating will announce it on our discord when it updat
 there you can say some suggestions or make friends in the community, also you can get raks for LCProxy (launcher addon) on our discord!
 
 # [Download!](https://github.com/La-wea-cosmica/Monar/releases) (Github Releases Page)
-# [Discord](https://dsc.gg/monar) Join For Icecreams
+# [Discord!](https://dsc.gg/monar) Join For Icecreams
 # Preview: 
 
 ![image](https://i.imgur.com/DEtD0xs.png)
