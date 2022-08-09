@@ -44,6 +44,7 @@ result its gonna to be like:
 
 # Extra's
 # Custom .lunarclient
+# warning! if you dont know what i am talking about please dont due this. 
 **If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
  "lunarpath" then just put your .lunarclient folder location in and thats all
  [only the most technical will understand.]**
