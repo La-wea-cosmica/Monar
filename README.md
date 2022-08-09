@@ -47,7 +47,7 @@ result its gonna to be like:
  [only the most technical will understand.]**
 
 
-# Casual Errors
+# Casual Errors [BETA]
 
 frist open a cmd window and paste this:
 
