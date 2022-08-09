@@ -42,10 +42,11 @@ result its gonna to be like:
 ![image](https://i.imgur.com/xrZnSOZ.png)
 
 
-#Extra's
-# If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
-# "lunarpath" then just put your .lunarclient folder location in and thats all
-# [only the most technical will understand.] 
+# Extra's
+# Custom .lunarclient
+**If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
+ "lunarpath" then just put your .lunarclient folder location in and thats all
+ [only the most technical will understand.]**
 
 
 # Casual Errors
