@@ -13,8 +13,8 @@ there you can say some suggestions or make friends in the community, also you ca
 # [Discord!](https://dsc.gg/monar) Join For Icecreams
 # Preview: 
 
-![image](https://i.imgur.com/DEtD0xs.png)
-![image](https://i.imgur.com/VrQui4N.png)
+![image](https://i.imgur.com/rybTmSG.png)
+![image](https://i.imgur.com/zfgWNfu.png)
 
 (if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
 
