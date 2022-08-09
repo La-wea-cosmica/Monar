@@ -641,6 +641,7 @@ echo [+] 1.16 to 1.19 Natives Are Working!
 ) else (
 echo [!] 1.16 to 1.19 Natives Dont Exist, Please Reinstall Monar...
 ) 
+title Monar Launcher V%vrs% / TroubleShoot Finished!
 echo Going Back to Gui in 20 seconds
 ping localhost -n 20.3 >nul
 cls
