@@ -2,7 +2,7 @@
 
 # WARNING!
 # This Launcher Dosent Support the Forge Module For now...
-# so No ReplayMod Support sorry.. i will add the support soon
+# i will add the ReplayMod (forge module) support as soon i can...
 **Let me Introduce you Monar Launcher!**
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
@@ -41,6 +41,11 @@ result its gonna to be like:
 
 ![image](https://i.imgur.com/xrZnSOZ.png)
 
+
+#Extra's
+# If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
+# "lunarpath" then just put your .lunarclient folder location in and thats all
+# [only the most technical will understand.] 
 
 
 # Casual Errors
