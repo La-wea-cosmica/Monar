@@ -1,8 +1,5 @@
 # Monar 🎃
 
-# WARNING!
-# This Launcher Dosent Support the Forge Module For now...
-# i will add the ReplayMod (forge module) support as soon i can...
 **Let me Introduce you Monar Launcher!**
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
@@ -68,6 +65,9 @@ and Download it, then install it and thats all.
 Now you can use Monar Witeout Any Problems! (if you have problems please go to https://dsc.gg/lunarcosmetics and tell us our problem.)
 
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
+# This Launcher Dosent Support the Forge Module For now...
+# i will add the ReplayMod (forge module) support as soon i can...
+
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
 
 Also if you have installed LCProxy (one of our addonds) please uninstall it if you are going to use the normal lunar client or just update the client.
