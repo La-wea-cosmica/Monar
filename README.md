@@ -41,6 +41,8 @@ result its gonna to be like:
 also remember to have java installed
 
 # Extra's
+# LCProxy Status: 🔴 [Offline]
+
 # Custom .lunarclient
 # warning! if you dont know what i am talking about please dont due this. 
 **If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
