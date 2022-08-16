@@ -51,8 +51,7 @@ also remember to have java installed
 
 
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
-# This Launcher Dosent Support the Forge Module For now...
-# i will add the ReplayMod (forge module) support as soon i can...
+# ReplayMod (forge module) is gonna to be supported when lunar add it again
 
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
 
