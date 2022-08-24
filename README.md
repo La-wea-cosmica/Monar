@@ -1,5 +1,6 @@
 # Monar 🎃
 ![Downloads](https://img.shields.io/github/downloads/La-wea-cosmica/Monar/total?style=for-the-badge)
+
 **Let me Introduce you Monar Launcher!**
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
