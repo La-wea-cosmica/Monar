@@ -70,3 +70,5 @@ its just a """optimized""" launcher, and it has some addon's
 
 
 
+More info at https://dsc.gg/monar
+
