@@ -11,8 +11,8 @@ there you can say some suggestions or make friends in the community, also you ca
 # [Discord!](https://dsc.gg/monar) Join For Icecreams
 # Preview: 
 
-![image](https://i.imgur.com/rybTmSG.png)
-![image](https://i.imgur.com/zfgWNfu.png)
+![image](https://i.imgur.com/kOhvPNZ.png)
+![image](https://i.imgur.com/veo72Of.png)
 
 (if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
 
@@ -38,26 +38,11 @@ and finally result its gonna to be like:
 
 also remember to have java installed
 
-# Extra's
-# LCProxy Status: 🔴 [Offline]
-
-# Custom .lunarclient
-# warning! if you dont know what i am talking about please dont due this. 
-**If you have your .lunarclient folder on other section just join to "files" and create a .txt named as
- "lunarpath" then just put your .lunarclient folder location in and thats all
- [only the most technical will understand.]**
-
-
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
-# ReplayMod (forge module) is gonna to be supported when lunar add it again
-
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
 
 Also if you have installed LCProxy (one of our addonds) please uninstall it if you are going to use the normal lunar client or just update the client.
 this is for skip any problem that lunar client can create with lcproxy files.
-
-
-
 
 
 
