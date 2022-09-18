@@ -54,3 +54,8 @@ its just a """optimized""" launcher, and it has some addon's
 
 More info at https://dsc.gg/monar
 
+
+#  **Unsigned Mode**
+if you see a screen telling you to dont run monar as administrator just due this
+
+got to setting and go to Unsigned Mode, enable it and copy and paste where do you have the monar folder
