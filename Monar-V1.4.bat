@@ -37,7 +37,6 @@ echo [!] Monar Settings Created!
 ping localhost -n 3.5 >nul
 ) 
 
-
 :gui
 cls
 chcp 65001 >nul 2>&1
