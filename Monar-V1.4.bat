@@ -332,8 +332,8 @@ set untilitye=xD
 
 for /f "delims=" %%r in (%APPDATA%\.monar\ram.txt) do set ramn=%%r
 for /f "delims=" %%t in (%APPDATA%\.monar\ram_min.txt) do set ramm=%%t
-for /f "delims=" %%g in (%APPDATA%\.monar\lunarlocation.txt) do set cuzlunar=%%t
-for /f "delims=" %%d in (%APPDATA%\.monar\minecraftlocation.txt) do set cuzminecraft=%%t
+for /f "delims=" %%g in (%APPDATA%\.monar\lunarlocation.txt) do set cuzlunar=%%g
+for /f "delims=" %%d in (%APPDATA%\.monar\minecraftlocation.txt) do set cuzminecraft=%%d
 set Args=-Xms%ramn%G -Xmx%ramn%G -Xmn%ramm%G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
 
 if exist "%APPDATA%\.monar\unsigned_path.txt" (
