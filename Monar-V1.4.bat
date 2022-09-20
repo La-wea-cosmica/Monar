@@ -37,6 +37,7 @@ echo [!] Monar Settings Created!
 ping localhost -n 3.5 >nul
 ) 
 
+
 :gui
 cls
 chcp 65001 >nul 2>&1
@@ -345,6 +346,14 @@ if exist "%APPDATA%\.monar\unsigned_path.txt" (
 for /f "delims=" %%q in (%APPDATA%\.monar\debug.txt) do set debugi=%%q
 set reDevil=%pather%\files\natives\1.16-1.19
 set scd=%cuzlunar%
+
+
+for /f "delims=" %%c in (%APPDATA%\.monar\cosmetic.txt) do set cosmeticon=%%c
+if "%cosmeticon%"=="enable" (
+set cumentic=%scd%\textures
+) else (
+set cumentic=
+)
 
 :loadd3
 if "%mcvrs%"=="1.16" (
@@ -740,7 +749,7 @@ goto SettingsLoadTWO
 
 :load8
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_19-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19.2 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_19-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19.2 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -851,6 +860,14 @@ if exist v1_18-0.1.0-SNAPSHOT-all.jar (
 echo [+] 1.18 Its Installed
 ) else (
 echo [-] 1.18 Its Not Installed
+)
+
+ping localhost -n 1.5 >nul
+
+if exist v1_19-0.1.0-SNAPSHOT-all.jar (
+echo [+] 1.19 Its Installed
+) else (
+echo [-] 1.19 Its Not Installed
 )
 
 ping localhost -n 1.5 >nul
