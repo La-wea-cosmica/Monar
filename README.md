@@ -3,12 +3,12 @@
 
                                  Let me Introduce you to Monar Launcher!
 
-Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It launch's 2 times more faster than the Normal Lunar Client!
-this project will be stay updating will announce it on our discord when it update, also We invite you to join on our server
-there you can say some suggestions or make friends in the community, also you can get raks for LCProxy (launcher addon) on our discord!
+Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It Can Be Very Simple But is Very Good!
+it also contains with "some" addons and it have the same settings that you can find on the original Lunar Client Launcher
+Dont Lose More Time And Donwload Monar Now!
 
 # [Download!](https://github.com/La-wea-cosmica/Monar/releases) (Github Releases Page)
-# [Discord!](https://dsc.gg/monar) Join For Icecreams
+# [Discord!](https://dsc.gg/monar) Join For Cool Icecreams
 # Preview: 
 
 ![image](https://i.imgur.com/kOhvPNZ.png)
@@ -28,11 +28,11 @@ then we are going to open "files" folder
 
 ![image](https://i.imgur.com/yCCFi9a.png)
 
-after that you are gonna to open "path.txt" and put the location folder and save it
+after that you are gonna to open "path.txt" and put the location of the folder and save it
  
 ![image](https://i.imgur.com/DgZVTNt.png)
 
-and finally result its gonna to be like:
+Final Result Example:
 
 ![image](https://i.imgur.com/xrZnSOZ.png)
 
@@ -47,8 +47,8 @@ this is for skip any problem that lunar client can create with lcproxy files.
 
 
 
-Also, Monar stills needing the original lunar client launcher, so this isnt a replacement of the real launcher,
-its just a """optimized""" launcher, and it has some addon's
+Also, Monar stills needing the original LC Launcher for get Lunar Client Updated, so this isnt a replacement of the real launcher,
+its just an alternative for a """optimized""" launcher, and it has some settings & addon's.
 
 
 
@@ -58,4 +58,4 @@ More info at https://dsc.gg/monar
 #  **Unsigned Mode**
 if you see a screen telling you to dont run monar as administrator just due this
 
-got to setting and go to Unsigned Mode, enable it and copy and paste where do you have the monar folder
+go to settings and go to Unsigned Mode, enable it and copy paste where do you have the monar folder, press enter and thats all
