@@ -14,9 +14,6 @@ Dont Lose More Time And Donwload Monar Now!
 ![image](https://i.imgur.com/kOhvPNZ.png)
 ![image](https://i.imgur.com/veo72Of.png)
 
-(if some dont know how to use open it and press the number of the option to you want to use and press enter, thats all)
-
-
 # **How to Install it?**
 lets be quick on this
 
@@ -38,11 +35,14 @@ Final Result Example:
 
 also remember to have java installed
 
+# I Dont Know How to use it!
+Just Open It, Press The Number Of The Option Do You Want To Use And Press Enter, Thats All
+
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
 
-Also if you have installed LCProxy (one of our addonds) please uninstall it if you are going to use the normal lunar client or just update the client.
-this is for skip any problem that lunar client can create with lcproxy files.
+Also if you have installed LCProxy (one of our addon's) please uninstall it if you are going to use the normal lunar client or just update the client.
+this is for skip any problem that lunar client can create with lcproxy connections
 
 
 
