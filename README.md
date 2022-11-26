@@ -1,4 +1,4 @@
-# Monar 🎃
+# 🎃 Monar 🎃
 ![Downloads](https://img.shields.io/github/downloads/La-wea-cosmica/Monar/total?style=for-the-badge)
 
                                  Let me Introduce you to Monar Launcher!
