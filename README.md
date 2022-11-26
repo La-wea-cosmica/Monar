@@ -4,8 +4,10 @@
                                  Let me Introduce you to Monar Launcher!
 
 Monar is a very simple launcher of Lunar Client Created on Batch (.bat), It Can Be Very Simple But is Very Good!
-it also contains with "some" addons and it have the same settings that you can find on the original Lunar Client Launcher
-Dont Lose More Time And Donwload Monar Now!
+You can use Some Settings Exactly like the Original Lunar Client Launcher, and also you can find things that are not in the Original Launcher,
+Dont Lose More Time Waiting For Open Lunar Client, use Monar and It Will be Open it More Faster Than the Normal Launcher.
+
+So Dont Wait More, Download Monar Now!
 
 # [Download!](https://github.com/La-wea-cosmica/Monar/releases) (Github Releases Page)
 # [Discord!](https://dsc.gg/monar) Join For Cool Icecreams
@@ -37,6 +39,7 @@ also remember to have java installed
 
 # I Dont Know How to use it!
 Just Open It, Press The Number Of The Option Do You Want To Use And Press Enter, Thats All
+if you need help Join to our [Discord](https://dsc.gg/monar)
 
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
 If you want to update lunar client just launch the normal lunar client and then open Monar, that will update your lunar client
@@ -51,11 +54,4 @@ Also, Monar stills needing the original LC Launcher for get Lunar Client Updated
 its just an alternative for a """optimized""" launcher, and it has some settings & addon's.
 
 
-
-More info at https://dsc.gg/monar
-
-
-#  **Unsigned Mode**
-if you see a screen telling you to dont run monar as administrator just due this
-
-go to settings and go to Unsigned Mode, enable it and copy paste where do you have the monar folder, press enter and thats all
+Need Help Or Info, Check Out https://dsc.gg/monar .
