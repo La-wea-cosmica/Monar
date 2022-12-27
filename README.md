@@ -27,15 +27,15 @@ then we are going to open "files" folder
 
 ![image](https://i.imgur.com/yCCFi9a.png)
 
-after that you are gonna to open "path.txt" and put the location of the folder and save it
+after that you are gonna to open "path.txt"
  
 ![image](https://i.imgur.com/DgZVTNt.png)
 
-Final Result Example:
+and finally put the location of the folder in "path.tx" and save it
 
 ![image](https://i.imgur.com/xrZnSOZ.png)
 
-also remember to have java installed
+Now you can use Monar!
 
 # I Dont Know How to use it!
 Just Open It, Press The Number Of The Option Do You Want To Use And Press Enter, Thats All
