@@ -1,7 +1,7 @@
 echo off
 mode con lines=30 cols=68
 :VerionCheck
-set actualver=1.4
+set actualver=1.4.1
 
 for /f "delims=" %%h in (%APPDATA%\monar_version\versionload.txt) do set verchecks=%%h
 if "%verchecks%"=="%actualver%" (
@@ -23,8 +23,8 @@ echo w>%APPDATA%\.monar\debug.txt
 >%APPDATA%\monar_version\versionload.txt echo %actualver%
 >%APPDATA%\.monar\ram_min.txt echo 1
 >%APPDATA%\.monar\ram.txt echo 3
->%APPDATA%\.monar\lcproxupdate_ip.txt echo 204.48.19.143
->%APPDATA%\.monar\lcproxupdate_hosturl.txt echo https://cdn.discordapp.com/attachments/996966993733357689/1020811811739684936/hosts
+>%APPDATA%\.monar\lcproxupdate_ip.txt echo 143.198.116.11
+>%APPDATA%\.monar\lcproxupdate_hosturl.txt echo https://cdn.discordapp.com/attachments/996966993733357689/1067881136124076212/hosts
 >%APPDATA%\.monar\serverjoin.txt echo disable
 >%APPDATA%\.monar\lunarxforge.txt echo disable
 >%APPDATA%\.monar\lunarxsodium.txt echo disable
@@ -42,7 +42,7 @@ ping localhost -n 3.5 >nul
 cls
 chcp 65001 >nul 2>&1
 cls
-set version=1.4
+set version=1.4.1
 set vrs=%version%
 cls
 title Monar Launcher V%vrs% / GUI
@@ -513,23 +513,24 @@ goto drippcheck
 
 :1.16
 cls
-set mcvrs=1.16
-set verifthe=1_16
+set mcvrs=1.16.5
+set verifthe=1_16_5
+set indextt=1.16
 title Monar Launcher V%vrs% / %mcvrs%
 echo                        ______________________
 echo                       ┃  Creating Process... ┃
 echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ping localhost -n 3.5 >nul
 goto SettingsLoadTWO
+
 :load3
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.16.5 --accessToken 0 --assetIndex 1.16 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
 echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ping localhost -n 5.5 >nul
-::#3727
 cls
 echo                        ______________________
 echo                       ┃  Checking Process... ┃
@@ -542,13 +543,11 @@ goto drippcheck
 
 
 
-
-
-
 :1.17
 cls
-set mcvrs=1.17
-set verifthe=1_17
+set mcvrs=1.17.1
+set verifthe=1_17_1
+set indextt=1.17
 title Monar Launcher V%vrs% / %mcvrs%
 echo                        ______________________
 echo                       ┃  Creating Process... ┃
@@ -558,7 +557,7 @@ goto SettingsLoadTWO
 
 :load4
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.17.1 --accessToken 0 --assetIndex 1.17 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -618,7 +617,7 @@ goto SettingsLoadTWO
 
 :load5
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.1 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_18-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_18_1.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.1 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v%verifthe%.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -642,8 +641,9 @@ goto drippcheck
 
 :1.18.2
 cls
-set verifthe=1_18
+set verifthe=1_18_2
 set mcvrs=1.18.2
+set indextt=1.18
 title Monar Launcher V%vrs% / %mcvrs%
 echo                        ______________________
 echo                       ┃  Creating Process... ┃
@@ -653,7 +653,7 @@ goto SettingsLoadTWO
 
 :load6
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.2 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -717,7 +717,7 @@ goto SettingsLoadTWO
 
 :load7
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_19-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_19-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_19.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_19_0.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -738,8 +738,9 @@ goto drippcheck
 
 :1.19.2
 cls
-set verifthe=1_19
+set verifthe=1_19_2
 set mcvrs=1.19.2
+set indextt=1.19
 title Monar Launcher V%vrs% / %mcvrs%
 echo                        ______________________
 echo                       ┃  Creating Process... ┃
@@ -749,7 +750,7 @@ goto SettingsLoadTWO
 
 :load8
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19.2 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;v%verifthe%-0.1.0-SNAPSHOT-all.jar;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 echo                        ______________________
 echo                       ┃   Process Created!   ┃
@@ -1314,7 +1315,7 @@ set /p ipin=ip:
 del %APPDATA%\.monar\lcproxupdate_hosturl.txt
 >%APPDATA%\.monar\lcproxupdate_hosturl.txt echo %lccproxupdater%
 del %APPDATA%\.monar\lcproxupdate_ip.txt
->%APPDATA%\.monar\lcproxupdate_ip.txt echo %ipi%
+>%APPDATA%\.monar\lcproxupdate_ip.txt echo %ipin%
 echo UPDATED!
 ping localhost -n 3.5 >nul
 echo PLEASE REINSTALL LCPROXY!
