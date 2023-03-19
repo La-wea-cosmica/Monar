@@ -1,2 +1,1 @@
-Dont Touch "natives" or "jre"
-if you delete it lunar its not gonna to launch
+This Folder Contais Natives And The Jre of Monar
