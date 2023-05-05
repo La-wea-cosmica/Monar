@@ -26,8 +26,8 @@ If You Need Some Help Join To Our [Discord](https://dsc.gg/monar) And Watch The 
 (If You Are Still Having Problems Feel Free To Open A Ticket)
 
 # **!!!!!!!!!! WARNING !!!!!!!!!!**
-If you want to update lunar client just launch the normal lunar client
-then open Monar, that will update your Lunar Client Version
+**If you want to update lunar client just launch the normal lunar client**
+**then open Monar, that will update your Lunar Client Version**
 
 # Please Note That Put is not associated with Moonsworth, and we are not trying to replace the use of Lunar Client.
 # Need Help?, Check Out Our Discord [Here!](https://dsc.gg/monar)
