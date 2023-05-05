@@ -29,8 +29,5 @@ If You Need Some Help Join To Our [Discord](https://dsc.gg/monar) And Watch The 
 If you want to update lunar client just launch the normal lunar client
 then open Monar, that will update your Lunar Client Version
 
-Monar stills needing the original LC Launcher for get Lunar Client Updated, so this isnt a replacement of the real launcher
-its just an alternative for the real launcher that gives you some little features that are not on the original.
-
-
+# Please Note That Put is not associated with Moonsworth, and we are not trying to replace the use of Lunar Client.
 # Need Help?, Check Out Our Discord [Here!](https://dsc.gg/monar)
