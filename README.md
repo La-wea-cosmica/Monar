@@ -1,6 +1,7 @@
 # 🎃 Monar 🎃
 ![Downloads](https://img.shields.io/github/downloads/La-wea-cosmica/Monar/total?style=for-the-badge)
 
+# Hello! This Launcher has been discontinued, it means you will no longer receive Monar updates. This version was planned to be released on August 2, 2023 (08/02/2023) and at that time my PC stopped working and some things were lost that were going to be added to this version, The Current Version You Are Viewing (1.5.1) It is one with almost no new functions and it only has the basics and there may be one or another error. If you still want to use Monar you can do it freely but You will no longer receive any type of update or new features. If you receive any errors you can still enter our discord (dsc.gg/monar) and ask for help or you can send me a message (Discord: @laweacosmica)
                                  Let me Introduce you to Monar Launcher!
 
 Monar is a very simple launcher of [Lunar Client](https://www.lunarclient.com) Created on Batch (.bat), It Can Be Very Simple But is Very Good!
@@ -29,5 +30,5 @@ If You Need Some Help Join To Our [Discord](https://dsc.gg/monar) And Watch The 
 **If you want to update lunar client just launch the normal lunar client**
 **then open Monar, that will update your Lunar Client Version**
 
-# Please Note That Put is not associated with Moonsworth, and we are not trying to replace the use of Lunar Client.
+# Please Note That Monar is not associated with Moonsworth, and we are not trying to replace the use of Lunar Client.
 # Need Help?, Check Out Our Discord [Here!](https://dsc.gg/monar)
