@@ -1,8 +1,8 @@
 echo off
 mode con lines=30 cols=68
 :VerionCheck
-set actualver=1.5
-set version=1.5
+set actualver=1.5.1
+set version=1.5.1
 set vrs=%version%
 
 for /f "delims=" %%h in (%APPDATA%\monar_version\versionload.txt) do set verchecks=%%h
@@ -21,8 +21,7 @@ goto DefaultSettings
     cls
     echo [!] Reseting Launcher...
     del /q %appdata%\.monar\
-    rmdir %appdata%\.monar\
-    if exist "%appdata\.monar\agents%" (
+    if exist "%appdata%\.monar\agents" (
         del /q %appdata%\.monar\agents\option_data
         del /q %appdata%\.monar\agents\name_data
         del /q %appdata%\.monar\agents\command_data
@@ -34,6 +33,7 @@ goto DefaultSettings
         rmdir %appdata%\.monar\agents\switch_data
         rmdir %appdata%\.monar\agents
         )
+    rmdir %appdata%\.monar\
 ping localhost -n 3.5 >nul
 goto SetupMonar
 )
@@ -72,11 +72,10 @@ echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾�
 mkdir %APPDATA%\".monar"
 mkdir %APPDATA%\"monar_version"
 >%APPDATA%\monar_version\versionload.txt echo %actualver%
+>%APPDATA%\monar_version\rip.txt echo yessir
 echo w>%APPDATA%\.monar\debug.txt
 >%APPDATA%\.monar\ram_min.txt echo 1
 >%APPDATA%\.monar\ram.txt echo 3
->%APPDATA%\.monar\lcproxupdate_ip.txt echo 143.198.116.11
->%APPDATA%\.monar\lcproxupdate_hosturl.txt echo https://cdn.discordapp.com/attachments/996966993733357689/1067881136124076212/hosts
 >%APPDATA%\.monar\serverjoin.txt echo disable
 >%APPDATA%\.monar\lunarxforge.txt echo disable
 >%APPDATA%\.monar\lunarxsodium.txt echo disable
@@ -130,6 +129,25 @@ if exist "%APPDATA%\.monar\agents" (
 
 
 :gui
+if exist "%APPDATA%\monar_version\rip.txt" (
+title I Love U!
+    echo.
+    echo.
+    echo		Hey! Remmember This Launcher Is Discontinued
+    echo 	More Info At https://bit.ly/MonarEnd
+    echo 	If You Will Still Using Monar
+    echo 	I Love You So Much!
+    echo 	I will Stop Taking Your Time
+    echo 	Goodbye!
+    echo.
+    echo.
+    echo.
+    echo.
+    echo.
+    echo.
+    PAUSE
+   del %APPDATA%\monar_version\rip.txt
+)
 cls
 chcp 65001 >nul 2>&1
 title Monar Launcher V%vrs% / Menu
@@ -141,6 +159,9 @@ echo		    ██║╚██╔╝██║██║  ██║██║╚█�
 echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
 echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
 echo.
+if exist "%appdata%\.monar\eastereggr1.txt" (
+    echo	       	[R.I.P]
+)
 echo                    Created by La wea Cosmica#3727
 echo.
 echo				1) Launcher
@@ -168,19 +189,19 @@ echo		    ██║╚██╔╝██║██║  ██║██║╚█�
 echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
 echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
 echo.
-echo				1) LCProxy
-echo				2) Java Agents
+echo				1) Java Agents
 echo				0) Back
 set /p opititi=Option:
 if "%opititi%"=="0" goto gui
-if "%opititi%"=="1" goto lcproxy
-if "%opititi%"=="2" goto jvagentmenui
+if "%opititi%"=="1" goto jvagentmenui
+if "%opititi%"=="lcproxy" goto easteregg
 
 echo Please enter a valid option & timeout /t 1 >nul & goto addonz
 goto addonz
 
-:lcproxy
-title Monar Launcher V%vrs% / Addons / LCProxy
+:easteregg
+cls
+title Monar Launcher V%vrs% / EASTER EGG
 cls
 echo.
 echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
@@ -190,19 +211,11 @@ echo		    ██║╚██╔╝██║██║  ██║██║╚█�
 echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
 echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
 echo.
-echo				1) Install
-echo				2) Uninstall
-echo                         3) Update
-echo                         0) Back
-set /p opitk=Option:
-if "%opitk%"=="0" goto addonz
-if "%opitk%"=="1" goto basic
-if "%opitk%"=="2" goto uninstall
-if "%opitk%"=="3" goto updatelcproxy
-
-echo Please enter a valid option & timeout /t 1 >nul & goto lcproxy
-goto lcproxy
-
+echo :(
+echo  RIP [2020 - 07/07/2023]
+ping localhost -n 6.5 >nul
+>%appdata%\.monar\eastereggr1.txt echo UNLOCKED
+goto gui
 
 :launcher
 cls
@@ -225,6 +238,7 @@ echo			         4) 1.16.5
 echo			         5) 1.17.1
 echo			         6) 1.18.X
 echo                          7) 1.19.X
+echo			         8) 1.20.X
 echo			         0) Back
 echo.
 set /p verop=Version:
@@ -235,6 +249,7 @@ if "%verop%"=="4" goto 1.16.5
 if "%verop%"=="5" goto 1.17.1
 if "%verop%"=="6" goto 1.18
 if "%verop%"=="7" goto 1.19s
+if "%verop%"=="8" goto 1.20s
 if "%verop%"=="0" goto gui 
 
 echo Please enter a valid option & timeout /t 1 >nul & goto launcher
@@ -267,7 +282,7 @@ if "%prosschang%"=="java" (
     echo                        ______________________
     echo                       ┃  Debugging Detected! ┃
     echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    ping localhost -n 4.5 >nul
+    ping localhost -n 3.5 >nul
     exit
 ) else (
     set notimportant=0
@@ -352,7 +367,7 @@ for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_2_data.txt) d
 
 if "%comdotagent2%"=="enable" (
     for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_2_data.txt) do set agentcom2=%%a
-    
+
 ) else (
     set agentcom2=
 )
@@ -362,7 +377,7 @@ for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_3_data.txt) d
 
 if "%comdotagent3%"=="enable" (
     for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_3_data.txt) do set agentcom3=%%a
-    
+
 ) else (
     set agentcom3=
 )
@@ -565,19 +580,17 @@ if "%comdotagent5%"=="enable" (
 )
 :: AGENTS RESOURCES END
 
-for /f "delims=" %%s in (%APPDATA%\.monar\lunarxsodium.txt) do set sodeum=%%s
 if "%sodeum%"=="enable" (
-    set icheerone=--ichorExternalFiles Phosphor_v%verifthe%.jar;Sodium_v%verifthe%.jar;Iris_v%verifthe%.jar;Indium_v%verifthe%.jar
-    set sodone=modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;argon-0.1.0-SNAPSHOT-all.jar
-    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-v%verifthe%.jar
-    set ifsodtree=;sodium-0.1.0-SNAPSHOT-all.jar
+      set icheerone=--ichorExternalFiles Sodium_v%verifthe%.jar;Iris_v%verifthe%.jar;Indium_v%verifthe%.jar
+    set sodone=sodium-0.1.0-SNAPSHOT-all.jar;modern-0.1.0-SNAPSHOT-all.jar
+    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar
+    set special=;fabric-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-v%verifthe%.jar
 ) else (
-    set icheerone=--ichorExternalFiles OptiFine_v%verifthe%.jar
-    set sodone=modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar
-    set sodtwo=optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar
-    set ifsodtree=
+    set icheerone=
+    set sodone=modern-0.1.0-SNAPSHOT-all.jar
+    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar
+    set special=;optifine-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar
 )
-
 
 for /f "delims=" %%j in (%APPDATA%\.monar\serverjoin.txt) do set servjoin=%%j
 if "%servjoin%"=="disable" (
@@ -660,13 +673,25 @@ if "%mcvrs%"=="1.19.3" (
 if "%mcvrs%"=="1.19.4" (
     goto load10
 ) else (
+    goto loadd11
+)
+
+:loadd11
+if "%mcvrs%"=="1.20" (
+    goto load11
+) else (
+    goto loadd12
+)
+
+:loadd12
+if "%mcvrs%"=="1.19.4" (
+    goto load12
+) else (
     cls
     echo [!] FATAL ERROR PLEASE REPORT TO DISCORD!
     echo [!] ERROR CODE: No Finded Version Requested
     ping localhost -n 88.5 >nul
 )
-
-
 
 
 
@@ -682,7 +707,7 @@ goto SettingsLoad
 
 :load0
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.7.10 --accessToken 0 --assetIndex 1.7 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_7.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.7.10 --accessToken 0 --assetIndex 1.7 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_7-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_7.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -706,7 +731,7 @@ goto SettingsLoad
 
 :load1
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %forgigi%genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.8.9 --accessToken 0 --assetIndex 1.8 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_8.jar%rembug% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %forgigi%genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.8.9 --accessToken 0 --assetIndex 1.8 --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_8-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_8.jar%rembug% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -730,7 +755,7 @@ goto SettingsLoad
 
 :load2
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.12.2 --accessToken 0 --assetIndex 1.12 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_12.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.12.2 --accessToken 0 --assetIndex 1.12 --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath genesis-0.1.0-SNAPSHOT-all.jar;v1_12-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_12.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -753,7 +778,7 @@ goto SettingsLoadTWO
 
 :load3
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -776,7 +801,7 @@ goto SettingsLoadTWO
 
 :load4
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -827,7 +852,7 @@ goto SettingsLoadTWO
 
 :load5
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.1 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v%verifthe%.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.18.1 --accessToken 0 --assetIndex 1.18 --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v%verifthe%.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -854,7 +879,7 @@ goto SettingsLoadTWO
 
 :load6
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -909,7 +934,7 @@ goto SettingsLoadTWO
 
 :load7
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_19_0.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version 1.19 --accessToken 0 --assetIndex 1.19 --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar;optifine-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar --ichorExternalFiles OptiFine_v1_19_0.jar --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -933,7 +958,7 @@ goto SettingsLoadTWO
 
 :load8
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -952,22 +977,7 @@ goto SettingsLoadTWO
 
 :load9
 cd %scd%\offline\multiver
-::sodium_1_19_3_different_map
-if "%sodeum%"=="enable" (
-    set icheerone=--ichorExternalFiles Sodium_v%verifthe%.jar;Iris_v%verifthe%.jar;Indium_v%verifthe%.jar
-    set sodone=modern-0.1.0-SNAPSHOT-all.jar;common-0.1.0-SNAPSHOT-all.jar
-    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-v%verifthe%.jar
-    set ifsodtree=;sodium-0.1.0-SNAPSHOT-all.jar
-    set "special="
-) else (
-    set icheerone=
-    set sodone=modern-0.1.0-SNAPSHOT-all.jar
-    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar
-    set special=;common-0.1.0-SNAPSHOT-all.jar
-    set ifsodtree=;common-0.1.0-SNAPSHOT-all.jar
-)
-
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%ifsodtree% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
@@ -986,12 +996,199 @@ goto SettingsLoadTWO
 
 :load10
 cd %scd%\offline\multiver
-for /D %%I in ("%pather%\files\jre\1.7-1.19\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp modern-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar;common-0.1.0-SNAPSHOT-all.jar com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir %cumentic% --ichorClassPath modern-0.1.0-SNAPSHOT-all.jar;genesis-0.1.0-SNAPSHOT-all.jar;lunar-lang.jar;lunar-emote.jar;lunar.jar;common-0.1.0-SNAPSHOT-all.jar %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
 cls
 goto messagefor
 
 
+:1.20s
+title Monar Launcher V%vrs% / Version Selection
+cls
+echo.
+echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
+echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
+echo		    ██╔████╔██║██║  ██║██╔██╗██║███████║██████╔╝
+echo		    ██║╚██╔╝██║██║  ██║██║╚████║██╔══██║██╔══██╗
+echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
+echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
+echo.
+echo                       Select a Version:
+echo			      1) 1.20
+echo			      2) 1.20.1
+echo			      0) Back
+set /p verop4=Version:
+if "%verop4%"=="0" goto launcher
+if "%verop4%"=="1" goto 1.20
+if "%verop4%"=="2" goto 1.20.1
+
+
+echo Please enter a valid option & timeout /t 1 >nul & goto 1.20s
+goto 1.20s
+
+:1.20
+cls
+set verifthe=1_20_0
+set mcvrs=1.20
+set indextt=1.20
+title Monar Launcher V%vrs% / %mcvrs%
+echo                        ______________________
+echo                       ┃  Creating Process... ┃
+echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+ping localhost -n 3.5 >nul
+goto SettingsLoadTWO
+
+:load11
+cd %scd%\offline\multiver
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+cls
+goto messagefor
+
+:1.20.1
+cls
+set verifthe=1_20_1
+set mcvrs=1.20.1
+set indextt=1.20
+title Monar Launcher V%vrs% / %mcvrs%
+echo                        ______________________
+echo                       ┃  Creating Process... ┃
+echo                        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+ping localhost -n 3.5 >nul
+goto SettingsLoadTWO
+
+:load12
+:: Always Sodium Enabled (Lunar Didnt Add Optifine On This Version Yet)
+if "%sodeum%"=="enable" (
+    set icheerone=--ichorExternalFiles Sodium_v%verifthe%.jar;Iris_v%verifthe%.jar;Indium_v%verifthe%.jar
+    set sodone=sodium-0.1.0-SNAPSHOT-all.jar;modern-0.1.0-SNAPSHOT-all.jar
+    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar
+    set special=;fabric-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-v%verifthe%.jar
+) else (
+    set icheerone=--ichorExternalFiles Sodium_v%verifthe%.jar;Iris_v%verifthe%.jar;Indium_v%verifthe%.jar
+    set sodone=sodium-0.1.0-SNAPSHOT-all.jar;modern-0.1.0-SNAPSHOT-all.jar
+    set sodtwo=genesis-0.1.0-SNAPSHOT-all.jar
+    set special=;fabric-0.1.0-SNAPSHOT-all.jar;fabric-0.1.0-SNAPSHOT-v%verifthe%.jar
+)
+cd %scd%\offline\multiver
+for /D %%I in ("%pather%\files\jre\zulu*") do start "Monar Debug" %%~I\bin\java%debugi%.exe --add-modules jdk.naming.dns --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Djna.boot.library.path=%reDevil% -Dlog4j2.formatMsgNoLookups=true --add-opens java.base/java.io=ALL-UNNAMED %Args% -Djava.library.path=%reDevil% -XX:+DisableAttachMechanism -cp %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% com.moonsworth.lunar.genesis.Genesis --version %mcvrs% --accessToken 0 --assetIndex %indextt% --userProperties {} --gameDir %cuzminecraft% --texturesDir  %cumentic% --launcherVersion 2.15.1 --hwid 0 --installationId 0 --ichorClassPath %sodone%;%sodtwo%;lunar-lang.jar;lunar-emote.jar;lunar.jar%special% %icheerone% --workingDirectory . --classpathDir . --width 854 --height 480 %servjoin%
+cls
+goto messagefor
+
+
+:agentcokcheck
+:: AGENTS RESOURCES
+for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_1_data.txt) do set comdotagent1=%%k
+
+if "%comdotagent1%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_1_data.txt) do set agentcom1=%%a
+    
+) else (
+    set agentcom1=
+)
+
+
+for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_2_data.txt) do set comdotagent2=%%k
+
+if "%comdotagent2%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_2_data.txt) do set agentcom2=%%a
+
+) else (
+    set agentcom2=
+)
+
+
+for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_3_data.txt) do set comdotagent3=%%k
+
+if "%comdotagent3%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_3_data.txt) do set agentcom3=%%a
+
+) else (
+    set agentcom3=
+)
+
+
+for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_4_data.txt) do set comdotagent4=%%k
+
+if "%comdotagent4%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_4_data.txt) do set agentcom4=%%a
+    
+) else (
+    set agentcom4=
+)
+
+
+for /f "delims=" %%k in (%appdata%\.monar\agents\switch_data\agent_5_data.txt) do set comdotagent5=%%k
+
+if "%comdotagent5%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\command_data\agent_5_data.txt) do set agentcom5=%%a
+    
+) else (
+    set agentcom5=
+)
+
+if "%comdotagent1%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\option_data\agent_1_data.txt) do set optionagentcom1=%%a
+) else (
+    set optionagentcom1=
+)
+
+
+if "%comdotagent2%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\option_data\agent_2_data.txt) do set optionagentcom2=%%a
+) else (
+    set optionagentcom2=
+)
+
+if "%comdotagent3%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\option_data\agent_3_data.txt) do set optionagentcom3=%%a
+) else (
+    set optionagentcom3=
+)
+
+if "%comdotagent4%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\option_data\agent_4_data.txt) do set optionagentcom4=%%a
+) else (
+    set optionagentcom4=
+)
+
+if "%comdotagent5%"=="enable" (
+    for /f "delims=" %%a in (%appdata%\.monar\agents\option_data\agent_5_data.txt) do set optionagentcom5=%%a
+) else (
+    set optionagentcom5=
+)
+:: AGENTS RESOURCES END
+echo AgentsCommandsRunning: %agentcom1%%optionagentcom1% %agentcom2%%optionagentcom2% %agentcom3%%optionagentcom3% %agentcom4%%optionagentcom4% %agentcom5%%optionagentcom5%
+goto cokcheckagentsolved
+
+
 :cokcheck
+title Monar Launcher V%vrs% / TroubleShooting...
+cls
+echo.
+echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
+echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
+echo		    ██╔████╔██║██║  ██║██╔██╗██║███████║██████╔╝
+echo		    ██║╚██╔╝██║██║  ██║██║╚████║██╔══██║██╔══██╗
+echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
+echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
+echo.
+echo.
+echo                             [WARNING] 
+echo          This Can Show Your PC Name, Share this At Your Own Risk
+echo                      Type "yes" For Continue
+echo.
+set /p lethimcock=Option:
+if "%lethimcock%"=="yes" (
+    goto cokcheckreal
+) else (
+    echo Going Back To Menu...
+    ping localhost -n 4.5 >nul
+    goto gui
+)
+echo Going Back To Menu...
+ping localhost -n 4.5 >nul
+goto gui
+
+:cokcheckreal
 title Monar Launcher V%vrs% / TroubleShooting...
 cls
 echo.
@@ -1009,37 +1206,34 @@ for /f "delims=" %%g in (%APPDATA%\.monar\lunarlocation.txt) do set cuzlunar=%%g
 for /f "delims=" %%x in (%APPDATA%\.monar\path.txt) do set pather=%%x
 
 if exist "%cuzlunar%" (
-echo [+] Lunar Folder Working.
-ping localhost -n 1.5 >nul
+    echo [+] Lunar Folder Working.
+    ping localhost -n 1.5 >nul
 ) else (
-echo [-] Your Lunar Folder was not Found...
-echo [!] Please report error at discord or change your lunarpath.
-ping localhost -n 30.8 >nul
-exit
+    echo [-] Your Lunar Folder was not Found...
+    echo [!] Please report error at discord or change your lunarpath.
+    ping localhost -n 30.8 >nul
+    exit
 )
-
 
 echo.
 echo Checking Path...
-
-IF EXIST "%pather%" (
+if exist "%pather%" (
     echo Your Path is: "%pather%"
     echo And in Theory is Working!
-) ELSE (
+) else (
     echo Path Not Found Please Report at discord.
     echo Or Change Your Path In Settings. (Option 9)
-    ping localhost -n 10.5 >nul
 )
-
+ping localhost -n 2.5 >nul
 echo.
 echo Checking Lunar Version's...
-IF EXIST "files\lunarpath.txt" (
+if exist "files\lunarpath.txt" (
     for /f "delims=" %%c in (files\lunarpath.txt) do set scd=%%c
-) ELSE (
+) else (
     set scd=%userprofile%\.lunarclient
 )
 
-ping localhost -n 3.5 >nul
+ping localhost -n 2.5 >nul
 cd %scd%\offline\multiver
 
 ::1.7.10 Troubleshot
@@ -1054,8 +1248,6 @@ ping localhost -n 1.5 >nul
 ::1.8.9 Troubleshot
 if exist Forge_v1_8.jar (
 echo [+] 1.8.9 Skyblock Its Installed
-) else (
-echo [-] 1.8.9 Skyblock Its Not Installed
 )
 
 if exist v1_8-0.1.0-SNAPSHOT-all.jar (
@@ -1150,11 +1342,14 @@ echo [+] 1.19.3 Sodium Its Installed
 )
 
 ping localhost -n 1.5 >nul
-
+echo.
+echo Checking Agents...
+goto agentcokcheck
+:cokcheckagentsolved
 cd %pather%
 echo.
 echo Checking Jre and Natives...
-if exist "files\jre\1.7-1.19\zulu17.34.19-ca-jre17.0.3-win_x64\bin\javaw.exe" (
+if exist "files\jre\zulu17.34.19-ca-jre17.0.3-win_x64\bin\javaw.exe" (
 echo [+] JRE Exist
 ) else (
 echo [!] JRE Dont Exist, Please Reinstall Monar Or Check Your Path...
@@ -1385,7 +1580,7 @@ echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══
 echo.
 echo              [?]  Type Name of you agent. (include the .jar 
 echo                                             if it has it)
-set /p namonebr=Name:
+set /p namonebr=AgentName:
 echo              [!] type "none" if dont use it
 set /p gaimkao=Argument:
 if "%gaimkao%"=="none" (
@@ -1409,6 +1604,8 @@ if exist "%appdata%\.monar\agents\option_data\agent_%agentnumber%_data_disabled.
 ) else (
     for /f "delims=" %%k in (%appdata%\.monar\agents\option_data\agent_%agentnumber%_data.txt) do set cuzagentoption=%%k
 )
+for /f "delims=" %%k in (%appdata%\.monar\agents\command_data\agent_%agentnumber%_data.txt) do set cuzagentcommandz=%%k
+for %%A in (%cuzagentcommandz%) do set "cuzagentcommand=%%~nxA"
 cls
 echo.
 echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
@@ -1424,21 +1621,22 @@ if "%cuzagentswitch%"=="enable" (
     echo                  [/] Agent %agentnumber% Status: Disabled
 )
 echo.
-echo                   1) Name: %cuzagentname%
-echo                   2) Argument: %cuzagentoption%
-echo                   3) Enable/Disable Agent
-echo                   4) Reset
+echo                   1) ShowingName: %cuzagentname%
+echo                   2) Agent: %cuzagentcommand%
+echo                   3) Argument: %cuzagentoption%
+echo                   4) Enable/Disable Agent
+echo                   5) Reset
 echo                   0) Back
 set /p dasdas=Option:
 if "%dasdas%"=="0" goto jvagentmenui
 if "%dasdas%"=="1" goto writenameagent
-if "%dasdas%"=="2" goto writeoptionagent
-if "%dasdas%"=="3" goto switchagent
-if "%dasdas%"=="4" goto resetdefsaint
+if "%dasdas%"=="2" goto writeagent
+if "%dasdas%"=="3" goto writeoptionagent
+if "%dasdas%"=="4" goto switchagent
+if "%dasdas%"=="5" goto resetdefsaint
 
 echo Please enter a valid option & timeout /t 1 >nul & goto gia
 goto gia
-
 
 :switchagent
 cls
@@ -1455,9 +1653,18 @@ echo Saved!
 ping localhost -n 3.5 >nul
 goto gia
 
+:writeagent
+echo.
+set /p namonebr=AgentName:
+del %appdata%\.monar\agents\command_data\agent_%agentnumber%_data.txt
+>%appdata%\.monar\agents\command_data\agent_%agentnumber%_data.txt echo -javaagent:%pather%\files\agents\%namonebr%
+echo Saved!
+ping localhost -n 3.5 >nul
+goto gia
+
 :writenameagent
 echo.
-set /p namonebr=Name:
+set /p namonebr=ShowingName:
 del %appdata%\.monar\agents\name_data\agent_%agentnumber%_data.txt
 >%appdata%\.monar\agents\name_data\agent_%agentnumber%_data.txt echo %namonebr%
 echo Saved!
@@ -1867,108 +2074,3 @@ ping localhost -n 3.5 >nul
 goto setupinn
 )
 goto setupinn
-
-
-:updatelcproxy
-cls
-echo.
-echo		    ███╗   ███╗ █████╗ ███╗  ██╗ █████╗ ██████╗ 
-echo		    ████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔══██╗
-echo		    ██╔████╔██║██║  ██║██╔██╗██║███████║██████╔╝
-echo		    ██║╚██╔╝██║██║  ██║██║╚████║██╔══██║██╔══██╗
-echo		    ██║ ╚═╝ ██║╚█████╔╝██║ ╚███║██║  ██║██║  ██║
-echo	       	    ╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚══╝╚═╝  ╚═╝╚═╝  ╚═╝
-echo.
-echo             [?] Hosts Url?
-set /p lccproxupdater=Url:
-echo             [?] Proxy Ip?
-set /p ipin=Ip:
-del %APPDATA%\.monar\lcproxupdate_hosturl.txt
-del %APPDATA%\.monar\lcproxupdate_ip.txt
->%APPDATA%\.monar\lcproxupdate_hosturl.txt echo %lccproxupdater%
->%APPDATA%\.monar\lcproxupdate_ip.txt echo %ipin%
-echo UPDATED!
-ping localhost -n 3.5 >nul
-echo PLEASE REINSTALL LCPROXY!
-ping localhost -n 4.5 >nul
-exit
-
-for /f "delims=" %%j in (%APPDATA%\.monar\serverjoin.txt) do set servjoin=%%j
-
-
-:basic
-cls
-chcp 437
-cls
-if "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
->nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
-) ELSE (
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-)
-
-
-if '%errorlevel%' NEQ '0' (
-echo Please Open the Program as Administrator
-echo For Use this function
-ping localhost -n 5.5 >nul
-exit
-) else ( goto gotAdmin )
-
-
-:gotAdmin
-cls
-for /f "delims=" %%y in (%APPDATA%\.monar\lcproxupdate_hosturl.txt) do set link=%%y
-del "C:\Windows\System32\drivers\etc\hosts"
-cls
-powershell -Command "Invoke-WebRequest %link% -Outfile C:\Windows\System32\drivers\etc\hosts"
-echo Please wait 5 - 10 seconds.
-ping localhost -n 3.5 >nul
-cls
-echo Done LCProxy Is Installed
-echo Have Fun!
-ping localhost -n 3.5 >nul
-cls
-exit
-
-
-
-
-::i.imgur.com/66Xc6wD.png
-:uninstall
-cls
-chcp 437 >nul 2>&1
-cls
-if "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
->nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
-) ELSE (
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-)
-
-
-if '%errorlevel%' NEQ '0' (
-echo Please Open the Program as Administrator
-echo for Use this function
-ping localhost -n 5.5 >nul
-exit
-) else ( goto gotAdmin )
-
-
-:gotAdmin
-for /f "delims=" %%z in (%APPDATA%\.monar\lcproxupdate_ip.txt) do set ipdd=%%z
-cls
-echo Uninstalling LCProxy...
-ping localhost -n 2 >nul
-set "HostsFile=%SystemRoot%\System32\drivers\etc\hosts"
-%SystemRoot%\System32\attrib.exe -r "%HostsFile%"
-::BETHA69420
-%SystemRoot%\System32\findstr.exe /I /R /V "%ipdd% assetserver.lunarclientprod.com ^$" "%HostsFile%" >"%TEMP%\%~n0.tmp"
-move /Y "%TEMP%\%~n0.tmp" "%HostsFile%"
-if errorlevel 1 del "%TEMP%\%~n0.tmp
-ping localhost -n 2 >nul
-cls
-ECHO Successfully Uninstalled LCProxy!
-ping localhost -n 2 >nul
-echo Please wait 5 - 10 seconds for your cosmetics to get removed fully!
-ping localhost -n 3.5 >nul
-cls
-exit
